@@ -13,7 +13,7 @@
       "allowedRoles": [ "frank" ]
     },
     {
-      "route": "/login"
+      "route": "/login",
       "rewrite": "/.auth/login/aad"
     }
   ],
