@@ -1,5 +1,26 @@
 {
-    "navigationFallback": {
-        "rewrite": "/index.html"
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "routes": [
+    {
+      "route": "/example",
+      "rewrite": "stuff/example.html",
+      "headers": { "x-custom": "u2u" }
+    },
+    {
+      "route": "api/*",
+      "allowedRoles": [ "frank" ]
+    },
+    {
+      "route": "/login"
+      "rewrite": "/.auth/login/aad"
     }
+  ],
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html",
+      "statusCode": 302
+    }
+  }
 }
